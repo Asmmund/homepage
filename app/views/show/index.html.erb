@@ -1,0 +1,13 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1>News</h1>
+<% @news.each do |news| %>
+<div class="article">
+  <span class="date_of_update"><%= humanize(Time.now - news.updated_at) %></span>
+  <h3><%= strip_tags(news.title) %></h3>  
+  <span class="text">
+    <%= strip_tags(news.text) %> 
+  </span>
+</div>
+<% end %>

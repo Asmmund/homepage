@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elmor's homepage</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Elmor's homepage, articles on troth, odinism" />
+  <meta name="keywords" content="Troth, Asatru, odin,thor, freya, frigg, scandinavia, paganisn" />
+  <meta name="author" content="Elmor" />  
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %> ">
+  <table id="content">
+    <tr>
+      <td class="menu">
+        <ul>
+          <li><%= link_to 'Articles', articles_path %></li>
+          <li><%= link_to 'News', :controller=>'show', :action=>'index' %></li>
+        </ul>
+      </td>
+      <td>
+        <%= yield :layout %>
+      </td>
+    </tr>
+  </table>
+
+
+</body>
+</html>

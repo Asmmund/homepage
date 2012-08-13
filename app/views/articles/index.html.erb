@@ -1,0 +1,24 @@
+<h1>Listing articles</h1>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<% @articles.each do |article| %>
+<div class="article">
+  <h3><%= link_to strip_tags(article.title), article %></h3>  
+  <span class="text">
+    <%= truncate(strip_tags(article.text),length: 80) %> 
+    <%= link_to 'full-> ', article %>
+  </span>
+  <div class="controlls">
+    
+    <%= link_to 'Edit', edit_article_path(article) %>
+    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  </div>
+</div>
+<% end %>
+
+<br />
+
+<%= link_to 'New Article', new_article_path %>
