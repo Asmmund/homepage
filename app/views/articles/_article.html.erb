@@ -1,0 +1,13 @@
+<div class="article">
+  <h3><%= link_to strip_tags(article.title), article %></h3>  
+  <span class="text"><% if params[:action] == 'index' %>
+    <%= truncate(strip_tags(article.text),length: 80) %> 
+    <% else %><%= strip_tags(article.text) %>  <%  end %> <%= link_to 'full-> ', article %>
+  </span>
+  <div class="controlls">
+    <% unless  params[:action] == 'index' %><%= link_to 'Back', articles_path %><% end %>
+    <%= link_to 'Edit', edit_article_path(article) %>
+    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  </div>
+</div>

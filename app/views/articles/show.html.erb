@@ -1,16 +1,4 @@
+
 <p id="notice"><%= notice %></p>
+<%= render(@article) %>
 
-
-<div class="article">
-  <h3><%= @article.title %></h3>  
-  <span class="text">
-    <%= strip_tags(@article.text) %> 
-  </span>
-  <div class="controlls">
-    
-    <%= link_to 'Back', articles_path %>
-    <%= link_to 'Edit', edit_article_path(@article) %>
-    <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-  </div>
-</div>

@@ -1,0 +1,11 @@
+  <div>
+    <h3><%= news.title %></h3>
+    <p><%= news.text %></p>
+    
+    <div class="controlls">
+    <% unless params[:action] =='show' %> <%= link_to 'Show', news %><% end %>
+    <%= link_to 'Edit', edit_news_path(news) %>
+    <%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<hr width="30%" />

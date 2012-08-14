@@ -17,7 +17,7 @@ class NewsController < ApplicationController
       @news = News.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid news #{params[:id]}"
-      redirect_to show_path, notice: 'Invalid news'
+      redirect_to :controller=>'show', :action=>'index', notice: 'Invalid news'
     else
       respond_to do |format|
         format.html # show.html.erb
@@ -43,7 +43,7 @@ class NewsController < ApplicationController
     @news = News.find(params[:id])
     rescue  ActiveRecord::RecordNotFound
       logger.error "Attempt to edit invalid news #{params[:id]}"
-      redirect_to show_path, notice: 'Invalid news'
+      redirect_to :controller=>'show', :action=>'index', notice: 'Invalid news'
     else
       respond_to do |format|
         format.html # show.html.erb
