@@ -1,8 +1,9 @@
 <div class="article">
   <h3><%= link_to strip_tags(article.title), article %></h3>  
   <span class="text"><% if params[:action] == 'index' %>
-    <%= truncate(strip_tags(article.text),length: 80) %> 
-    <% else %><%= strip_tags(article.text) %>  <%  end %> <%= link_to 'full-> ', article %>
+    <%= truncate(strip_tags(article.text),length: 80) %>
+    <%= link_to 'full-> ', article %>
+    <% else %><%= strip_tags(article.text) %>  <%  end %> 
   </span>
   <div class="controlls">
     <% unless  params[:action] == 'index' %><%= link_to 'Back', articles_path %><% end %>
