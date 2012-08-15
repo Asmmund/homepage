@@ -1,4 +1,6 @@
-<span class="create_link"><%= link_to 'New Article', new_article_path %></span>
+<span class="create_link"
+<% unless session[:user_id] %>style="display: none"<% end %> >
+<%= link_to 'New Article', new_article_path %></span>
 <h1>Listing articles</h1>
 <% if notice %>
 <p id="notice"><%= notice %></p>

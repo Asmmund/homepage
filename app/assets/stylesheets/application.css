@@ -22,3 +22,38 @@
  #content .menu ul{
    list-style-type:none;
  }
+  #content .menu ul >li {
+  margin: 5px 0;
+}   
+div.controlls {
+     background: lightblue;
+     padding: 3px;
+         border-radius:6px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:5px;
+    -khtml-border-radius:10px;
+}
+a.hidden_link {
+    text-decoration: none;
+}
+a.hidden_link:hover {
+    text-decoration: none;
+    background:  none;
+    color:black;
+    cursor: default;
+}
+
+span.create_link{
+    float: right;
+    color: red;
+    font-weight: bold;
+    padding: 3px;
+    border: 2px solid red;
+     border-radius:6px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:5px;
+    -khtml-border-radius:10px;
+}
+td.content{
+    vertical-align: top;
+}

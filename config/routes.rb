@@ -10,7 +10,7 @@ end
 
   resources :news
 
-  get "show/index"
+  get "show/index" , as: 'show'
 match "/show*tail" => 'show#index'  
   resources :articles                                                                                                                                                                                                                                         
    root :to => 'Show#index', as: 'Show'

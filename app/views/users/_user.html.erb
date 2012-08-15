@@ -1,0 +1,8 @@
+  <div class="article">
+    <h3><%= user.name %></h3>
+    <div class="controlls">
+    <%= link_to 'Edit', edit_user_path(user) %>
+    <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<hr width="30%" />

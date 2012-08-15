@@ -8,6 +8,15 @@ class ActiveSupport::TestCase
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
   fixtures :all
+  def login_as(user)
+    session[:user_id] = users(:one).id
+  end
+  def logout
+    session.destroy :user_id
+  end
 
+  def setup
+    login_as :one if defined? session
+  end
   # Add more helper methods to be used by all tests here...
 end

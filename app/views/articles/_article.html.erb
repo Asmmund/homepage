@@ -5,7 +5,8 @@
     <%= link_to 'full-> ', article %>
     <% else %><%= strip_tags(article.text) %>  <%  end %> 
   </span>
-  <div class="controlls">
+  <div class="controlls"
+       <% unless session[:user_id] %>style="display: none"<% end %> >
     <% unless  params[:action] == 'index' %><%= link_to 'Back', articles_path %><% end %>
     <%= link_to 'Edit', edit_article_path(article) %>
     <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>

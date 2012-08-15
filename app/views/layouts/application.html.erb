@@ -15,12 +15,22 @@
   <table id="content">
     <tr>
       <td class="menu">
-        <ul>
+        <ul><%= link_to 'Menu:', login_path, class: 'hidden_link' %>
           <li><%= link_to 'Articles', articles_path %></li>
           <li><%= link_to 'News', :controller=>'show', :action=>'index' %></li>
         </ul>
+        <% if session[:user_id] %>
+        <div class="controlls">
+        <ul >
+          <li><%= link_to 'Edit news', :controller=>'news', :action=>'index'  %></li>
+          <li><%= link_to 'Edit articles',articles_path %></li>
+          <li><%= link_to 'Users',users_path %></li>
+        </ul>
+        <%= button_to 'Logout',logout_path, method: :delete %>
+        </div>
+        <% end %>
       </td>
-      <td>
+      <td class="content">
         <%= yield :layout %>
       </td>
     </tr>
