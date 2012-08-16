@@ -1,9 +1,11 @@
 <div class="article">
   <h3><%= link_to strip_tags(article.title), article %></h3>  
   <span class="text"><% if params[:action] == 'index' %>
-    <%= truncate(strip_tags(article.text),length: 80) %>
+    <%= truncate(strip_tags(article.text),length: 200).gsub("&nbsp;", " ") %>
     <%= link_to 'full-> ', article %>
-    <% else %><%= strip_tags(article.text) %>  <%  end %> 
+    <% else %>
+      <%= raw(article.text) %>
+    <%  end %>
   </span>
   <div class="controlls"
        <% unless session[:user_id] %>style="display: none"<% end %> >

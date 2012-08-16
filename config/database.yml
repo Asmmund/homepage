@@ -12,10 +12,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rails_development
+  database: elmor_db
   pool: 5
-  username: rails
-  password: rails
+  username: elmor_db
+  password: 3elmor_db#
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rails_production
+  database: elmor_db
   pool: 5
-  username: rails
-  password: rails
+  username: elmor_db
+  password: 3elmor_db#
   socket: /var/run/mysqld/mysqld.sock

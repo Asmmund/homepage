@@ -8,6 +8,7 @@ en:
       menu: "Menu:"
       atricles: "Articles"
       news: "News"
+      header_news: "News"
 
     show:
       index:
@@ -15,5 +16,5 @@ en:
 
     articles:
       index:
-        heading_articles: "Listing articles"
+        header_articles: "Listing articles"
 

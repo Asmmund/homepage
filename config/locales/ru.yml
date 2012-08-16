@@ -5,6 +5,7 @@ ru:
       menu: "Меню:"
       articles: "Статьи"
       news: "Новости"
+      header_news: "Новости"
 
     show:
       index:

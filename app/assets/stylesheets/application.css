@@ -44,6 +44,7 @@ a.hidden_link:hover {
 }
 
 span.create_link{
+    margin: 0 10px;
     float: right;
     color: red;
     font-weight: bold;
