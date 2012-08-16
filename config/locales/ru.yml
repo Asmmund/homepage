@@ -1,0 +1,15 @@
+ru:
+    layouts:
+     application:
+      title: "Домашняя страница"
+      menu: "Меню:"
+      articles: "Статьи"
+      news: "Новости"
+
+    show:
+      index:
+        header_news: "Новости"
+
+    articles:
+      index:
+        heading_articles: "Доступные статьи"

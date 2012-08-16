@@ -36,7 +36,11 @@ div {
 }
 
 #notice {
-  color: green;
+color: yellow;
+font-weight: bold;
+border: 2px solid red;
+text-align: center;
+background: lightGrey;
 }
 
 .field_with_errors {

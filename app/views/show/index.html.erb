@@ -1,7 +1,7 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-<h1>News</h1>
+<h1><%= t('.header_news')  %></h1>
 <% @news.each do |news| %>
 <div class="article">
   <span class="date_of_update"><%= humanize(Time.now - news.updated_at) %></span>

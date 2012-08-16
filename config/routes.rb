@@ -7,13 +7,13 @@ controller :sessions do
 end
  
   resources :users
-
+scope '(:locale)' do
   resources :news
-
   get "show/index" , as: 'show'
-match "/show*tail" => 'show#index'  
+  match "/show*tail" => 'show#index'  
   resources :articles                                                                                                                                                                                                                                         
-   root :to => 'Show#index', as: 'Show'
+  root :to => 'Show#index', as: 'Show'
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

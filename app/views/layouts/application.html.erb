@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Elmor's homepage</title>
+  <title><%=  t('.title') %></title>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <meta name="robots" content="index, follow" />
   <meta name="description" content="Elmor's homepage, articles on troth, odinism" />
@@ -12,12 +12,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %> ">
+
   <table id="content">
     <tr>
       <td class="menu">
-        <ul><%= link_to 'Menu:', login_path, class: 'hidden_link' %>
-          <li><%= link_to 'Articles', articles_path %></li>
-          <li><%= link_to 'News', :controller=>'show', :action=>'index' %></li>
+        <ul><%= link_to t('.menu'), login_path, class: 'hidden_link' %>
+          <li><%= link_to t('.articles'), articles_path %></li>
+          <li><%= link_to t('.news'), :controller=>'show', :action=>'index' %></li>
         </ul>
         <% if session[:user_id] %>
         <div class="controlls">
@@ -31,6 +32,15 @@
         <% end %>
       </td>
       <td class="content">
+          <div id="banner">
+            <%= form_tag show_path, class: 'locale' do %>
+              <%= select_tag 'set_locale',
+                options_for_select(LANGUAGES, I18n.locale.to_s),
+                onchange: 'this.form.submit()' %>
+              <%= submit_tag 'submit' %>
+              <%= javascript_tag "$('.locale input').hide()" %>
+          <% end %>
+        </div>
         <%= yield :layout %>
       </td>
     </tr>
