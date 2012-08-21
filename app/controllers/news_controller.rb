@@ -4,6 +4,9 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
+    if params[:set_locale]
+      redirect_to news_path(locale: params[:set_locale])
+    end
     @news = News.paginate page: params[:page], order: 'created_at desc',
         per_page: 5
 

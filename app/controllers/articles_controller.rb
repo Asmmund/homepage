@@ -3,14 +3,17 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
+    if params[:set_locale]
+      redirect_to news_path(locale: params[:set_locale])
+    else
     @articles = Article.paginate page: params[:page], order: 'created_at desc',
         per_page: 5
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @articles }
     end
   end
+ end
 
   # GET /articles/1
   # GET /articles/1.json

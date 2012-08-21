@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_filter :authorize
   before_filter :set_locale_from_params
+  before_filter :authorize
   protect_from_forgery
   protected
   def set_locale_from_params
