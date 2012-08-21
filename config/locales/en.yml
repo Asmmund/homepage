@@ -4,7 +4,7 @@
 en:
   layouts:
     application:
-      title: "Elmor\'s homepage"
+      title: "Elmors homepage"
       menu: "Menu:"
       atricles: "Articles"
       news: "News"

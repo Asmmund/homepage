@@ -6,12 +6,13 @@ controller :sessions do
   delete 'logout' => :destroy
 end
  
-  resources :users
+  
 scope '(:locale)' do
+  resources :users
   resources :news
+  resources :articles
   get "show/index" , as: 'show'
   match "/show*tail" => 'show#index'  
-  resources :articles                                                                                                                                                                                                                                         
   root :to => 'Show#index', as: 'Show'
 end
   # The priority is based upon order of creation:
