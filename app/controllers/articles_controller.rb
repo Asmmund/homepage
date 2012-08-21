@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to edit invalid article #{params[:id]}"
-      redirect_to show_path, notice: 'Invalid article '
+      redirect_to articles_path, notice: 'Invalid article '
      else
        respond_to do |format|
         format.html { render :action=>'edit'}

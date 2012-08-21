@@ -16,24 +16,24 @@
   <table id="content">
     <tr>
       <td class="menu">
+        <% if session[:user_id] %>
+          <div class="controlls">
+        <% end %>
         <ul><%= link_to t('.menu'), login_path, class: 'hidden_link' %>
           <li><%= link_to t('.articles'), articles_path %></li>
-          <li><%= link_to t('.news'), :controller=>'show', :action=>'index' %></li>
-        </ul>
+          <li><%= link_to t('.news'), news_index_path %></li>
         <% if session[:user_id] %>
-        <div class="controlls">
-        <ul >
-          <li><%= link_to 'Edit news', :controller=>'news', :action=>'index'  %></li>
-          <li><%= link_to 'Edit articles',articles_path %></li>
           <li><%= link_to 'Users',users_path %></li>
         </ul>
         <%= button_to 'Logout',logout_path, method: :delete %>
-        </div>
+        <% else %>
+          </ul>
         <% end %>
+          </div>
       </td>
       <td class="content">
           <div id="banner">
-            <%= form_tag show_path, class: 'locale' do %>
+            <%= form_tag news_path, class: 'locale' do %>
               <%= select_tag 'set_locale',
                 options_for_select(LANGUAGES, I18n.locale.to_s),
                 onchange: 'this.form.submit()' %>

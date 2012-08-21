@@ -11,9 +11,9 @@ scope '(:locale)' do
   resources :users
   resources :news
   resources :articles
-  get "show/index" , as: 'show'
-  match "/show*tail" => 'show#index'  
-  root :to => 'Show#index', as: 'Show'
+  get "news/index" , as: 'news'
+  match "/news*tail" => 'news#index'
+  root :to => 'News#index', as: 'News'
 end
   # The priority is based upon order of creation:
   # first created -> highest priority.

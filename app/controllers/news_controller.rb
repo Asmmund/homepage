@@ -1,4 +1,6 @@
 class NewsController < ApplicationController
+   skip_before_filter :authorize, only: [:index, :show]
+    
   # GET /news
   # GET /news.json
   def index
@@ -18,7 +20,7 @@ class NewsController < ApplicationController
       @news = News.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid news #{params[:id]}"
-      redirect_to :controller=>'show', :action=>'index', notice: 'Invalid news'
+      redirect_to news_path, notice: 'Invalid news'
     else
       respond_to do |format|
         format.html # show.html.erb
@@ -44,7 +46,7 @@ class NewsController < ApplicationController
     @news = News.find(params[:id])
     rescue  ActiveRecord::RecordNotFound
       logger.error "Attempt to edit invalid news #{params[:id]}"
-      redirect_to :controller=>'show', :action=>'index', notice: 'Invalid news'
+      redirect_to news_path, notice: 'Invalid news'
     else
       respond_to do |format|
         format.html # show.html.erb
@@ -57,7 +59,7 @@ class NewsController < ApplicationController
   # POST /news.json
   def create
     @news = News.new(params[:news])
-
+    
     respond_to do |format|
       if @news.save
         format.html { redirect_to @news, notice: 'News was successfully created.' }

@@ -1,9 +1,12 @@
-  <div>
+  <div class="article">
+    <span class="date_of_update"><%= humanize(Time.now - news.updated_at) %></span>
     <h3><%= news.title %></h3>
     <p><%= news.text %></p>
     
-    <div class="controlls">
-    <% unless params[:action] =='show' %> <%= link_to 'Show', news %><% end %>
+    <div class="controlls"
+         <% unless session[:user_id] %>style="display: none"<% end %> >
+    <% unless params[:action] =='show' %>
+      <%= link_to 'Show', news %><% end %>
     <%= link_to 'Edit', edit_news_path(news) %>
     <%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
