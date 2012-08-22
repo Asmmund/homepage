@@ -32,8 +32,8 @@
           </div>
       </td>
       <td class="content">
-          <div id="banner" style="display: none">
-            <%= form_tag news_index_path, class: 'locale' do %>
+          <div id="banner">
+            <%= form_tag news_path, class: 'locale' do %>
               <%= select_tag 'set_locale',
                 options_for_select(LANGUAGES, I18n.locale.to_s),
                 onchange: 'this.form.submit()' %>

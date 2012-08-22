@@ -13,7 +13,7 @@ scope '(:locale)' do
   resources :articles
   get "news/index" , as: 'news'
   # match "/news*tail" => 'news#index'
-  root :to => 'News#index'
+  root :to => 'News#index', as: 'news'
 end
   # The priority is based upon order of creation:
   # first created -> highest priority.

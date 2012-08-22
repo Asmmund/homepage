@@ -6,13 +6,15 @@ class NewsController < ApplicationController
   def index
     if params[:set_locale]
       redirect_to news_path(locale: params[:set_locale])
-    end
+    else
+
     @news = News.paginate page: params[:page], order: 'created_at desc',
         per_page: 5
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @news }
+    end
     end
   end
 
@@ -65,7 +67,7 @@ class NewsController < ApplicationController
     
     respond_to do |format|
       if @news.save
-        format.html { redirect_to @news, notice: 'News was successfully created.' }
+        format.html { redirect_to news_path, notice: 'News was successfully created.' }
         format.json { render json: @news, status: :created, location: @news }
       else
         format.html { render action: "new" }
