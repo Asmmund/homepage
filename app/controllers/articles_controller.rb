@@ -4,10 +4,20 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     if params[:set_locale]
-      redirect_to news_path(locale: params[:set_locale])
+      redirect_to articles_path(locale: params[:set_locale])
     else
-    @articles = Article.paginate page: params[:page], order: 'created_at desc',
+      @q = Article.search(params[:q])
+      if params[:q]
+        logger.debug '! IF 1'
+         @articles = @q.result(:distinct => true).
+           paginate page: params[:page], order: 'created_at desc',
+          per_page: 5   # load all matching records
+      else
+        logger.debug('! ELSE 2')
+        @articles = Article.paginate page: params[:page], order: 'created_at desc',
         per_page: 5
+      end
+     
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @articles }

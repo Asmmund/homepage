@@ -7,10 +7,7 @@ ru:
       news: "Новости"
       header_news: "Новости"
 
-    show:
-      index:
-        header_news: "Новости"
-
     articles:
       index:
-        heading_articles: "Доступные статьи"
+        header_articles: "Cтатьи"
+        find: "Поиск"

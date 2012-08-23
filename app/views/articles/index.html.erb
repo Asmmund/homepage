@@ -1,7 +1,14 @@
+<span class="search">
+  <%= search_form_for @q do |f| %>
+  <%= f.label t('.find') %>
+  <%= f.text_field :title_cont,:size => 15 %><br />
+  <%= f.submit :value=>'Search', :class=>'fl_right' %>
+<% end %>
+</span>
 <span class="create_link"
 <% unless session[:user_id] %>style="display: none"<% end %> >
 <%= link_to 'New Article', new_article_path %></span>
-<h1><%= t('.header_articles')%></h1>
+<h1><%= t('.header_articles')%></h1><br />
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
