@@ -59,3 +59,11 @@ td.content{
     vertical-align: top;
 }
 #banner{float:right}
+
+.corners {
+     border: 1px solid grey;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 10px;
+}

@@ -7,16 +7,22 @@ class ArticlesController < ApplicationController
       redirect_to articles_path(locale: params[:set_locale])
     else
       @q = Article.search(params[:q])
-      if params[:q]
-        logger.debug '! IF 1'
-         @articles = @q.result(:distinct => true).
-           paginate page: params[:page], order: 'created_at desc',
+       logger.debug '****** SEARCH request: ' +
+            params[:q].to_s + '******'
+       @articles = @q.result(:distinct => true).
+          paginate page: params[:page], order: 'created_at desc',
           per_page: 5   # load all matching records
-      else
-        logger.debug('! ELSE 2')
-        @articles = Article.paginate page: params[:page], order: 'created_at desc',
-        per_page: 5
-      end
+#      if params[:q]
+#        logger.debug '****** SEARCH request sent: ' +
+#          params[:q].to_s + '******'
+#         @articles = @q.result(:distinct => true).
+#           paginate page: params[:page], order: 'created_at desc',
+#          per_page: 5   # load all matching records
+#      else
+#        logger.debug('****** SEARCH no request')
+#        @articles = @q.result(:distinct => true).
+#          paginate page: params[:page], order: 'created_at desc',per_page: 5
+#      end
      
     respond_to do |format|
       format.html # index.html.erb
