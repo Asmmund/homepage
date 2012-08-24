@@ -1,6 +1,5 @@
 Homepage::Application.routes.draw do
 get 'admin' => 'admin#index'
-
 controller :sessions do
   get 'login' => :new
   post 'login' => :create
@@ -11,9 +10,11 @@ end
 scope '(:locale)' do
   resources :users
   resources :news
-  resources :articles
+  resources :articles do
+    get 'autocomplete_article_title'
+  end
   get "news/index" , as: 'news'
-get 'articles/autocomplete_article_title'
+
 # match "/news*tail" => 'news#index'
   root :to => 'News#index', as: 'news'
 end
