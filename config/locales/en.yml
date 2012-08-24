@@ -8,9 +8,13 @@ en:
       menu: "Menu:"
       atricles: "Articles"
       news: "News"
-      header_news: "News"
+      
 
   articles:
     index:
       header_articles: "Articles"
       find: "Find"
+      search: 'Search'
+  news:
+    index:
+      header_news: "News"

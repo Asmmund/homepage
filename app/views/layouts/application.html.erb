@@ -6,6 +6,11 @@
   <meta name="robots" content="index, follow" />
   <meta name="description" content="Elmor's homepage, articles on troth, odinism" />
   <meta name="keywords" content="Troth, Asatru, odin,thor, freya, frigg, scandinavia, paganisn" />
+    <%= javascript_include_tag '/javascripts/jquery-1.8.0.min.js',
+      '/javascripts/jquery-ui-1.8.23.custom.min.js',
+      '/javascripts/autocomplete-rails.js', '/javascripts/rails.js'  %>
+    <%= stylesheet_link_tag '/stylesheets/ui-lightness/jquery-ui-1.8.23.custom.css' %>
+
   <meta name="author" content="Elmor" />  
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>

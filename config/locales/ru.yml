@@ -5,9 +5,14 @@ ru:
       menu: "Меню:"
       articles: "Статьи"
       news: "Новости"
-      header_news: "Новости"
+      
 
     articles:
       index:
         header_articles: "Cтатьи"
         find: "Поиск"
+        search: 'Искать'
+
+    news:
+      index:
+        header_news: "Новости"

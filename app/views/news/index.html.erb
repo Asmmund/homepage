@@ -1,7 +1,7 @@
 <span class="create_link"
       <% unless session[:user_id] %>style="display: none"<% end %>>
       <%= link_to 'New News', new_news_path %></span>
-<h1>Listing news</h1>
+<h1><%= t('.header_news')  %></h1>
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>

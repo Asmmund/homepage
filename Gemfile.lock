@@ -38,7 +38,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    columnize (0.3.6)
     daemons (1.1.9)
+    debugger (1.2.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.3)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.3)
     erubis (2.7.0)
     eventmachine (0.12.10)
     execjs (1.4.0)
@@ -56,6 +64,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.3.6)
+    nifty-generators (0.4.6)
     pg (0.14.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -75,6 +84,8 @@ GEM
       activesupport (= 3.2.6)
       bundler (~> 1.0)
       railties (= 3.2.6)
+    rails3-jquery-autocomplete (1.0.7)
+      rails (~> 3.0)
     railties (3.2.6)
       actionpack (= 3.2.6)
       activesupport (= 3.2.6)
@@ -119,9 +130,12 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
-  jquery-rails
+  debugger
+  jquery-rails (~> 2.0)
+  nifty-generators
   pg
   rails (= 3.2.6)
+  rails3-jquery-autocomplete
   ransack
   sass-rails (~> 3.2.3)
   thin

@@ -1,8 +1,9 @@
 <span class="search corners">
   <%= search_form_for @q do |f| %>
   <%= f.label t('.find') %>
-  <%= f.text_field :title_cont,:size => 15 %><br />
-  <%= f.submit :value=>'Search', :class=>'fl_right' %>
+  <%= f.autocomplete_field :title_cont,
+    articles_autocomplete_article_title_path, :size => 15 %><br />
+  <%= f.submit :value=>t('.search'), :class=>'fl_right' %>
 <% end %>
 </span>
 <span class="create_link"
