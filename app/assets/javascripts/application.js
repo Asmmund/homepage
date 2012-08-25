@@ -1,5 +1,5 @@
 //= require jquery
-//= require jquery_ujs
+/* // = requ ire jquery_ujs */
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
