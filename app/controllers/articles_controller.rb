@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  autocomplete :article, :title, :as=>:name
+  autocomplete :article, :title # , :as=>:name
   skip_before_filter :authorize, only: [:index, :show]
   
   # GET /articles

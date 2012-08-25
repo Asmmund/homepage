@@ -1,18 +1,20 @@
 Homepage::Application.routes.draw do
-get 'admin' => 'admin#index'
+  get 'admin' => 'admin#index'
+  
 controller :sessions do
   get 'login' => :new
   post 'login' => :create
   delete 'logout' => :destroy
 end
- 
+
   
 scope '(:locale)' do
   resources :users
   resources :news
   resources :articles do
-    get 'autocomplete_article_title'
+  get 'articles/autocomplete_article_title'
   end
+ 
   get "news/index" , as: 'news'
 
 # match "/news*tail" => 'news#index'
