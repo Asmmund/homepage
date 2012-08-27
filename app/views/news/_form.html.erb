@@ -10,14 +10,16 @@
       </ul>
     </div>
   <% end %>
-
+<p><%= t('.size_restriction') %></p>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.label :text %><br />
-    <%= f.text_area :text %>
+    <%= f.text_area :text,:class => "tinymce",
+      :rows => 10, :cols => 20 %>
+     <%= tinymce %>
   </div>
   <div class="actions">
     <%= f.submit %>

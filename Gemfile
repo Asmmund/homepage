@@ -43,3 +43,4 @@ gem "ransack"
 gem 'rails3-jquery-autocomplete'
 gem 'nifty-generators'
 gem 'jquery-rails', '~> 2.0'
+gem 'tinymce-rails'

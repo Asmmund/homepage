@@ -1,7 +1,7 @@
   <div class="article">
     <span class="date_of_update"><%= humanize(Time.now - news.updated_at) %></span>
     <h3><%= news.title %></h3>
-    <p><%= news.text %></p>
+    <p><%= raw(news.text) %></p>
     
     <div class="controlls"
     <% unless session[:user_id] %>style="display: none"<% end %> >

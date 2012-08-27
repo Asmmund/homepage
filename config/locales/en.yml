@@ -18,3 +18,5 @@ en:
   news:
     index:
       header_news: "News"
+    form:
+      size_restriction: "Remember, size of news should be small!"

@@ -16,3 +16,5 @@ ru:
     news:
       index:
         header_news: "Новости"
+      form:
+        size_restriction: "Помните, размер новости должен быть маленьким!"
