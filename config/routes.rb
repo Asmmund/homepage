@@ -9,13 +9,13 @@ end
 
   
 scope '(:locale)' do
+  get 'articles/autocomplete_article_title'
+  get "news/index" , as: 'news'
   resources :users
   resources :news
   resources :articles do
 
   end
-  get 'articles/autocomplete_article_title'
-  get "news/index" , as: 'news'
 
 # match "/news*tail" => 'news#index'
   root :to => 'News#index', as: 'news'
