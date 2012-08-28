@@ -22,7 +22,7 @@ class SessionsControllerTest < ActionController::TestCase
   test "should logout" do
     delete :destroy
     assert_response :redirect
-    assert_match show_url, @response.redirect_url
+    assert_match news_url, @response.redirect_url
    
   end
 

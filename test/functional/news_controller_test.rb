@@ -21,7 +21,7 @@ class NewsControllerTest < ActionController::TestCase
       post :create, news: { text: @news.text, title: @news.title }
     end
 
-    assert_redirected_to news_path(assigns(:news))
+    assert_redirected_to news_path
   end
 
   test "should show news" do
@@ -36,7 +36,7 @@ class NewsControllerTest < ActionController::TestCase
 
   test "should update news" do
     put :update, id: @news, news: { text: @news.text, title: @news.title }
-    assert_redirected_to news_path(assigns(:news))
+    assert_redirected_to news_path
   end
 
 #  test "shouldn't update news with empty params" do
