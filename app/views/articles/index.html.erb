@@ -18,8 +18,7 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-  <%= render(partial: 'article', collection: @articles) %>
-
+<%= render(partial: 'article', collection: @articles) %>
 <br />
  <p><%= will_paginate @articles %></p>
 

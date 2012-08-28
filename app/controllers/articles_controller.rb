@@ -1,8 +1,6 @@
 class ArticlesController < ApplicationController
   autocomplete :article, :title # , :as=>:name
   skip_before_filter :authorize, except: [:edit, :update, :destroy]
-  caches_action :index
-  caches_action :show, :cache_path => Proc.new {|c| c.request.url }
   
   # GET /articles
   # GET /articles.json
@@ -80,7 +78,6 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    expire_action :action => :index
     @article = Article.new(params[:article])
 
     respond_to do |format|
@@ -97,7 +94,6 @@ class ArticlesController < ApplicationController
   # PUT /articles/1
   # PUT /articles/1.json
   def update
-    expire_action :action => :show
     @article = Article.find(params[:id])
 
     respond_to do |format|
@@ -114,7 +110,6 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    expire_action :action => :index
 
     @article = Article.find(params[:id])
     @article.destroy

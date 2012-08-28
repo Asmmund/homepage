@@ -1,8 +1,6 @@
 class NewsController < ApplicationController
    skip_before_filter :authorize, only: [:index, :show]
-  caches_action :index
-  caches_action :show, :cache_path => Proc.new {|c| c.request.url }
-    
+     
   # GET /news
   # GET /news.json
   def index
@@ -65,7 +63,6 @@ class NewsController < ApplicationController
   # POST /news
   # POST /news.json
   def create
-    expire_action :action => :index
     @news = News.new(params[:news])
     
     respond_to do |format|
@@ -82,8 +79,6 @@ class NewsController < ApplicationController
   # PUT /news/1
   # PUT /news/1.json
   def update
-    expire_action :action => :show
-
     @news = News.find(params[:id])
 
     respond_to do |format|
@@ -100,7 +95,6 @@ class NewsController < ApplicationController
   # DELETE /news/1
   # DELETE /news/1.json
   def destroy
-    expire_action :action => :index
     @news = News.find(params[:id])
     @news.destroy
 
