@@ -111,6 +111,9 @@ qf.union 5,2
 qf.union 7,5
 qf.union 4,5
 qf.union 3,4
+qf.union 8,6
+qf.union 9,8
+
 
 #qf.union 3,2
 puts qf.connected 2,1
