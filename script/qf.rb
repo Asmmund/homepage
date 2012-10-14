@@ -1,6 +1,15 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-
+=begin
+practice for the first week of Algorithms part 1
+Quick union & quick find
+=end 
+=begin
+class QF
+implements usage of quick find algorithm
+@id - array of connections
+def connected p,q - returns bool are given elements connected via a tree model connects p,q  - first element with the second one. via changing referense of first element
+def get_id - returns @id
+def root i finds root element of i
+=end
 class QF
   def initialize
     @id = []
@@ -10,9 +19,6 @@ class QF
     #puts @id.inspect
   end
   
-  def union(p,q)
-    @id
-  end
 
   def connected(p,q)
     @id[p] == @id[q]
@@ -36,6 +42,14 @@ class QF
   end
 end
 
+=begin
+class QU
+implements usage of quick union algorithm
+def connected p,q - returns bool are given elements connected via a tree model connects p,q  - first element with the second one. via changing referense of first element
+def get_id - returns @id
+def root i - finds root element of i
+def union -  adds a reference to the second tree to a first element root element
+=end
 class QU < QF
   def connected(p,q)
     return root(p) == root(q)
@@ -46,12 +60,6 @@ class QU < QF
     j = root(q)
     @id[i] = j
   end
-#  def set_connection
-#    
-#    @id.each_with_index do |val,index|
-#      @id[index] = @id[index+2] if index < @id.size - 3
-#    end
-#  end
   private
   def root i
     while( i != @id[i])
@@ -61,11 +69,20 @@ class QU < QF
   end
 end
 
-
+=begin
+class WeightedQU
+implements usage of weighted quick union algorithm
+@sz - array of int sizes of a thee. key of a tree - root element key in the array @id
+def connected p,q - returns bool are given elements connected via a tree model connects p,q  - first element with the second one. via changing referense of first element
+def get_id - returns @id
+def root i - finds root element of i
+def union -  adds a reference to the largest tree root element (chosen from p & q) to the smallest tree element root element
+=end
 class WeightedQU < QU
-  alias :parent_initialize :initialize
+  #alias :parent_initialize :initialize
   def initialize
-    parent_initialize()
+#    super_a()
+    super()
     @sz = []
     10.times do |i|
       @sz[i] = 1
@@ -78,7 +95,6 @@ class WeightedQU < QU
     if @sz[i]<=@sz[j]
       @id[i] = j
       @sz[j] += @sz[i]
-
       @sz[i] = 0
     else
       @id[j] = i
@@ -91,7 +107,11 @@ class WeightedQU < QU
     @sz
   end
 end
-
+=begin
+class WeightedQUCompressed
+implements usage of weighted quick union  algorithm with a compressed route
+def root i - finds root element of i
+=end
 class WeightedQUCompressed < WeightedQU
  private 
  def root i
@@ -103,8 +123,9 @@ class WeightedQUCompressed < WeightedQU
  end
 end
 t_start = Time.now
-qf = WeightedQUCompressed.new
-#qf.set_connection
+qf = WeightedQUCompressed.new()
+
+# connect elements
 
 qf.union 2,1
 qf.union 5,2
@@ -113,11 +134,10 @@ qf.union 4,5
 qf.union 3,4
 qf.union 8,6
 qf.union 9,8
-
-
-#qf.union 3,2
+# are two elements connected?
 puts qf.connected 2,1
 t_end = Time.now
-
+# output of the resulting arrays 1 - with id's, 2 - sizes of resulting sizes array
 puts "#{qf.get_id} **** #{qf.get_size}"
+# output execution time of the script
 puts t_end - t_start
