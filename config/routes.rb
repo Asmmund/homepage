@@ -8,7 +8,7 @@ controller :sessions do
 end
 
 
-scope '(:locale)' do
+scope '(:locale)', :locale => /en|ru/ do
   get 'articles/autocomplete_article_title'
   resources :users
   resources :news do
