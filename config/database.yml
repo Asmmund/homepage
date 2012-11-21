@@ -1,5 +1,5 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-# 
+#
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -14,14 +14,15 @@ development:
   database: development
   username: postgres
   password: postgres
-#  adapter: mysql2
-#  encoding: utf8
-#  reconnect: false
-#  database: elmor_db
-#  pool: 5
-#  username: elmor_db
-#  password: 3elmor_db#
-#  socket: /var/run/mysqld/mysqld.sock
+  # adapter: mysql2
+  # encoding: utf8
+  # reconnect: false
+  # database: elmor_db
+  # pool: 5
+  # username: root
+  # password: elmor
+  # host: localhost
+  # socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -32,14 +33,12 @@ test:
   database: test
   username: postgres
   password: postgres
-  #  adapter: mysql2
-#  encoding: utf8
-#  reconnect: false
-#  database: rails_test
-#  pool: 5
-#  username: rails
-#  password: rails
-#  socket: /var/run/mysqld/mysqld.sock
+  # adapter: mysql2
+  # encoding: utf8
+  # database: rails_test
+  # username: root
+  # password: elmor
+  # host: localhost
 
 production:
   adapter: postgresql

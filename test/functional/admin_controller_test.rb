@@ -8,4 +8,11 @@ class AdminControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not get index" do
+    user = users(:one)
+
+    get :index
+    assert_response :error
+  end
+
 end

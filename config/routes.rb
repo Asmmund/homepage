@@ -1,23 +1,21 @@
 Homepage::Application.routes.draw do
   get 'admin' => 'admin#index'
-  
+
 controller :sessions do
   get 'login' => :new
   post 'login' => :create
   delete 'logout' => :destroy
 end
 
-  
+
 scope '(:locale)' do
   get 'articles/autocomplete_article_title'
-  get "news/index" , as: 'news'
   resources :users
-  resources :news
+  resources :news do
+  end
   resources :articles do
-
   end
 
-# match "/news*tail" => 'news#index'
   root :to => 'News#index', as: 'news'
 end
   # The priority is based upon order of creation:

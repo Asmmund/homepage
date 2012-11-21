@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-# gem 'mysql2'
+ # gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'activerecord-deprecated_finders', git: 'git://github.com/rails/activerecord-deprecated_finders.git'
+#  gem 'mysql2'
 gem 'pg'
 # gem 'sqlite3'# , '~>3.0'
 
@@ -21,8 +21,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-gem 'thin'
-
+gem "thin", "1.5.0"
+gem "eventmachine", "1.0.0.rc.1"
+gem 'slim'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
