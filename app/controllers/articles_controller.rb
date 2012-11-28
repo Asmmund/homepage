@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   autocomplete :article, :title # , :as=>:name
   skip_before_filter :authorize, except: [:edit, :update, :destroy]
-  
+
   # GET /articles
   # GET /articles.json
   def index
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
 #        @articles = @q.result(:distinct => true).
 #          paginate page: params[:page], order: 'created_at desc',per_page: 5
 #      end
-     
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @articles }
@@ -82,6 +82,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        # ActionsMailer.article_added(@article).deliver
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: @article }
       else
