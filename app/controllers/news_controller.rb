@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
    skip_before_filter :authorize, only: [:index, :show]
-     
+   cache_sweeper :news_sweeper
   # GET /news
   # GET /news.json
   def index
@@ -64,7 +64,7 @@ class NewsController < ApplicationController
   # POST /news.json
   def create
     @news = News.new(params[:news])
-    
+
     respond_to do |format|
       if @news.save
         format.html { redirect_to news_path, notice: 'News was successfully created.' }

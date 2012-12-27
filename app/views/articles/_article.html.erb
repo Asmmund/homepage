@@ -1,17 +1,16 @@
-<div class="article">
-  <h3><%= link_to strip_tags(article.title), article %></h3>  
-  <span class="text"><% if params[:action] == 'index' %>
-    <%= truncate(strip_tags(article.text),length: 200).gsub("&nbsp;", " ") %>
-    <%= link_to 'full-> ', article %>
-    <% else %>
-      <%= raw(article.text) %>
-    <%  end %>
-  </span>
-  <div class="controlls"
-       <% unless session[:user_id] %>style="display: none"<% end %> >
-    <% unless  params[:action] == 'index' %><%= link_to 'Back', articles_path %><% end %>
-    <%= link_to 'Edit', edit_article_path(article) %>
-    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% cache article do %>
+    <div class="article">
+      <h3><%= strip_tags(article.title) %></h3>
+      <span class="text">
+          <%= raw(article.text) %>
+      </span>
+        <%= link_to 'Back', articles_path %>
+        <div class="controlls"
+           <% unless session[:user_id] %>style="display: none"<% end %> >
 
-  </div>
-</div>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      </div>
+    </div>
+  <% end%>

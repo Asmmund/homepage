@@ -1,0 +1,13 @@
+  <div class="article">
+    <h3><%= link_to strip_tags(article_list.title), article_list %></h3>
+    <span class="text">
+      <%= truncate(strip_tags(article_list.text),length: 200).gsub("&nbsp;", " ") %>
+      <%= link_to 'full-> ', article_list %>
+    </span>
+    <div class="controlls"
+         <% unless session[:user_id] %>style="display: none"<% end %> >
+      <%= link_to 'Edit', edit_article_path(article_list) %>
+      <%= link_to 'Destroy', article_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    </div>
+  </div>

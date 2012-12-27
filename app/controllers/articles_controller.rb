@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   autocomplete :article, :title # , :as=>:name
   skip_before_filter :authorize, except: [:edit, :update, :destroy]
-
+  cache_sweeper :article_sweeper
   # GET /articles
   # GET /articles.json
   def index

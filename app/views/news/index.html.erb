@@ -5,8 +5,9 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-
-<%= render(partial: 'news', collection: @news) %>
+<% cache [params[:page], 'news_list'] do %>
+  <%= render(partial: 'news', collection: @news) %>
+<% end %>
 <br />
 
 <p><%= will_paginate @news %></p>
