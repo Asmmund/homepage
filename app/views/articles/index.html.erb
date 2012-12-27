@@ -18,7 +18,9 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<%= render(partial: 'article', collection: @articles) %>
+<% cache [params[:page], 'article_list'] do %>
+  <%= render(partial: 'article', collection: @articles) %>
+<% end %>
 <br />
  <p><%= will_paginate @articles %></p>
 
