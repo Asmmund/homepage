@@ -1,15 +1,13 @@
 source 'https://rubygems.org'
 
- gem 'rails', '3.2.11'
+  gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
- # gem 'rails', :git => 'git://github.com/rails/rails.git'
+  # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'activerecord-deprecated_finders', git: 'git://github.com/rails/activerecord-deprecated_finders.git'
-#  gem 'mysql2'
 gem 'pg'
-# gem 'sqlite3'# , '~>3.0'
 
-
+gem "unicorn"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -34,10 +32,8 @@ gem 'slim'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
-# To use debugger
-gem 'debugger'
 gem 'will_paginate', '~> 3.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem "ransack"
@@ -45,6 +41,9 @@ gem 'rails3-jquery-autocomplete'
 gem 'nifty-generators'
 gem 'jquery-rails', '~> 2.0'
 gem 'tinymce-rails'
+group :development do
+  gem 'debugger'
+end
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
