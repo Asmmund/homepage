@@ -3,3 +3,4 @@ nbproject
 config/database.yml
 tmp
 db/*.sqlite3
+db/initial.sql
