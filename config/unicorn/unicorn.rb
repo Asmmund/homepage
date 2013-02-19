@@ -8,7 +8,7 @@ timeout 180
 listen "127.0.0.1:9000"
 
 # Spawn unicorn master worker for user apps (group: apps)
-user 'halfros', 'halfros'
+user 'h41319', 'h41319'
 
 # Fill path to your app
 working_directory app_path
