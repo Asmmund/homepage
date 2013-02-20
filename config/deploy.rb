@@ -1,3 +1,13 @@
+require "bundler/capistrano"
+require "execjs"
+# after "deploy:update_code", 'bundle:install'
+# task 'bundle:install' do
+#   run "cd #{release_path} && bundle install"
+
+# end
+   set :default_environment, {
+      'PATH' => "/home/h41319/data/.rvm/gems/ruby-1.9.3-p385@global/bin:$PATH"
+    }
 #############################################################
 # Application
 #############################################################
