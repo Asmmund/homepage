@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead:
   # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'activerecord-deprecated_finders', git: 'git://github.com/rails/activerecord-deprecated_finders.git'
+gem 'activerecord-deprecated_finders', :git => 'git://github.com/rails/activerecord-deprecated_finders.git'
 gem 'pg'
 
 # Gems used only for assets and not required
@@ -32,7 +32,6 @@ gem 'slim'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
 
 gem 'will_paginate', '~> 3.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -44,7 +43,9 @@ gem 'jquery-rails', '~> 2.0'
 gem 'tinymce-rails'
 group :development do
   gem 'debugger'
-  gem 'capistrano-unicorn', :require => false
+  gem 'capistrano'
+  # gem 'capistrano-unicorn', :require => false
+  # gem 'rvm-capistrano'
 end
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
