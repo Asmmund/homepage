@@ -9,7 +9,9 @@ class Article < ActiveRecord::Base
   def original_updated_at
   @original_updated_at ||updated_at.to_f
   end
-
+  def new?
+    true
+  end
   private
     def send_email
       ActionsMailer.article_added(@article).deliver
