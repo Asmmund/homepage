@@ -45,7 +45,7 @@ group :development do
   gem 'debugger'
   gem 'capistrano'
   # gem 'capistrano-unicorn', :require => false
-  # gem 'rvm-capistrano'
+  gem 'rvm-capistrano'
 end
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
