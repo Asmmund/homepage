@@ -6,6 +6,7 @@ source 'https://rubygems.org'
   # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'activerecord-deprecated_finders', :git => 'git://github.com/rails/activerecord-deprecated_finders.git'
 gem 'pg'
+gem 'sqlite3'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,7 +19,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem 'rb-inotify', '~> 0.8.8'
 gem "thin", "1.5.0"
 gem "eventmachine", "1.0.0.rc.1"
 gem 'slim'
