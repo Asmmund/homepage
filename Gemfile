@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-  gem 'rails', '3.2.11'
+  gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
   # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'activerecord-deprecated_finders', :git => 'git://github.com/rails/activerecord-deprecated_finders.git'
 gem 'pg'
 gem 'sqlite3'
-
-# Gems used only for assets and not required
+gem 'execjs'
+# gem 'therubyracer', :platforms => :ruby
+# Gemgem 'therubyracer', :platforms => :rubys used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -46,7 +47,7 @@ group :development do
   gem 'debugger'
   gem 'capistrano'
   # gem 'capistrano-unicorn', :require => false
-  gem 'rvm-capistrano'
+ gem 'rvm-capistrano', '>= 1.3.0.rc11'
 end
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
