@@ -43,16 +43,12 @@ gem 'nifty-generators'
 
 gem 'jquery-rails', '~> 2.0'
 gem 'tinymce-rails'
-group :development do
+group :development, :test do
   gem 'debugger'
   gem 'capistrano'
   # gem 'capistrano-unicorn', :require => false
  gem 'rvm-capistrano', '>= 1.3.0.rc11'
-end
-group :test, :development do
-  gem "rspec-rails", "~> 2.0"
-end
-group :test do
+ gem "rspec-rails", "~> 2.0"
   gem 'shoulda-matchers'
   gem "factory_girl_rails", "~> 4.0"
   gem "capybara"

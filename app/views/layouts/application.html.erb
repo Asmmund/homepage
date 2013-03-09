@@ -7,7 +7,7 @@
   <meta name="description" content="Elmor's homepage, articles on troth, odinism" />
   <meta name="keywords" content="Troth, Asatru, odin,thor, freya, frigg, scandinavia, paganisn" />
 
-  <meta name="author" content="Elmor" />  
+  <meta name="author" content="Elmor" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
       <%= javascript_include_tag '/javascripts/jquery-ui-1.8.23.custom.min.js',
@@ -28,7 +28,7 @@
           <li><%= link_to t('.articles'), articles_path %></li>
           <li><%= link_to t('.news'), news_index_path %></li>
         <% if session[:user_id] %>
-          <li><%= link_to 'Users',users_path %></li>
+          <li><%= link_to 'Users',users_path, id:'users' %></li>
         </ul>
         <%= button_to 'Logout',logout_path, method: :delete %>
         <% else %>
