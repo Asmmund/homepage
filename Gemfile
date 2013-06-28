@@ -40,11 +40,12 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem "ransack"
 gem 'rails3-jquery-autocomplete'
 gem 'nifty-generators'
-
+gem 'therubyracer'
+gem `rb-readline`
 gem 'jquery-rails', '~> 2.0'
 gem 'tinymce-rails'
 group :development, :test do
-  gem 'debugger'
+  # gem 'debugger'
   gem 'capistrano'
   # gem 'capistrano-unicorn', :require => false
  gem 'rvm-capistrano', '>= 1.3.0.rc11'
